@@ -7,7 +7,7 @@ export const setLists = createAsyncThunk(
   'lists/setLists',
   async () => {
     const res = axios
-      .get(`${BASE_URL}:3001/lists?_expand=color&_embed=tasks`)
+      .get(`${BASE_URL}/lists?_expand=color&_embed=tasks`)
       .then(({ data }) => {
         return data
       })
@@ -18,7 +18,7 @@ export const setLists = createAsyncThunk(
 export const addTask = createAsyncThunk(
   'tasks/addTask',
   async (task) => {
-    axios.post(`${BASE_URL}:3001/tasks`, { listId: task.listId, text: task.text, completed: false })
+    axios.post(`${BASE_URL}/tasks`, { listId: task.listId, text: task.text, completed: false })
     return task;
   }
 )
@@ -26,7 +26,7 @@ export const addTask = createAsyncThunk(
 export const deleteTask = createAsyncThunk(
   'tasks/deleteTask',
   async (task) => {
-    axios.delete(`${BASE_URL}:3001/tasks/` + task.taskId)
+    axios.delete(`${BASE_URL}/tasks/` + task.taskId)
     return task;
   }
 )
@@ -34,7 +34,7 @@ export const deleteTask = createAsyncThunk(
 export const editTask = createAsyncThunk(
   'tasks/editTask',
   async (task) => {
-    axios.patch(`${BASE_URL}:3001/tasks/` + task.taskId, { text: task.text, completed: task.completed })
+    axios.patch(`${BASE_URL}/tasks/` + task.taskId, { text: task.text, completed: task.completed })
     return task;
   }
 )
@@ -46,7 +46,7 @@ export const editTask = createAsyncThunk(
 export const addList = createAsyncThunk(
   'lists/addList',
   async (list) => {
-    axios.post(`${BASE_URL}:3001/lists`, {
+    axios.post(`${BASE_URL}/lists`, {
       name: list.name,
       colorId: list.colorId
     })
@@ -57,7 +57,7 @@ export const addList = createAsyncThunk(
 export const deleteList = createAsyncThunk(
   'lists/deleteList',
   async (listId) => {
-    axios.delete(`${BASE_URL}:3001/lists/` + listId)
+    axios.delete(`${BASE_URL}/lists/` + listId)
     return listId;
   }
 )
@@ -65,7 +65,7 @@ export const deleteList = createAsyncThunk(
 export const editList = createAsyncThunk(
   'lists/editList',
   async (list) => {
-    axios.patch(`${BASE_URL}:3001/lists/` + list.listId, { name: list.name })
+    axios.patch(`${BASE_URL}/lists/` + list.listId, { name: list.name })
     return list;
   }
 )

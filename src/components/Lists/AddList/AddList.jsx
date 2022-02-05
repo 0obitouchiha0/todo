@@ -15,7 +15,7 @@ const AddList = (props) => {
 
   useEffect(() => {
     axios
-      .get(`${BASE_URL}:3001/colors`)
+      .get(`${BASE_URL}/colors`)
       .then(({data}) => {
         setColors(data)
       })

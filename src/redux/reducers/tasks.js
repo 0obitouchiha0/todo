@@ -6,21 +6,21 @@ const BASE_URL = 'https://react-todooo.herokuapp.com'
 export const addTask = createAsyncThunk(
   'tasks/addTask',
   async ({ task }) => {
-    axios.post(`${BASE_URL}:3001/tasks`, { listId: task.listId, text: task.text, completed: false })
+    axios.post(`${BASE_URL}/tasks`, { listId: task.listId, text: task.text, completed: false })
   }
 )
 
 export const deleteTask = createAsyncThunk(
   'tasks/deleteTask',
   async ({ task }) => {
-    axios.delete(`${BASE_URL}:3001/tasks` + task.taskId)
+    axios.delete(`${BASE_URL}/tasks` + task.taskId)
   }
 )
 
 export const editTask = createAsyncThunk(
   'tasks/editTask',
   async ({ task }) => {
-    axios.patch(`${BASE_URL}:3001/tasks` + task.taskId, { text: task.text, completed: task.completed })
+    axios.patch(`${BASE_URL}/tasks` + task.taskId, { text: task.text, completed: task.completed })
   }
 )
 
