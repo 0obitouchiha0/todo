@@ -5,7 +5,9 @@ import TasksList from './TasksList/TasksList';
 import db from '../../assets/db.json'
 
 const Tasks = (props) => {
-  let maxId = db.tasks[db.tasks.length - 1].id
+
+  let maxId = 0
+  if(db.tasks.length) maxId = db.tasks[db.tasks.length - 1].id
   return (
     <div className="todo__tasks">
       <TasksTitle
