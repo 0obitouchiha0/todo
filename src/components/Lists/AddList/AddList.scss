@@ -1,0 +1,67 @@
+.colors__container {
+  display: flex;
+  grid-gap: 10px;
+}
+.open-btn {
+  margin-top: 20px;
+  position: relative;
+  display: block;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  grid-gap: 5px;
+  padding: 10px;
+  cursor: pointer;
+  opacity: 0.8;
+  font-size: 14px;
+}
+
+.add-list {
+  display: flex;
+  flex-direction: column;
+  grid-gap: 20px;
+  position: absolute;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  .badge {
+    width: 20px;
+    height: 20px;
+    .active {
+      border: 1px solid #000;
+    }
+  }
+  input {
+    border: 1px solid #efefef;
+    outline: none;
+    border-radius: 4px;
+    padding: 10px;
+    &:placeholder {
+      font-size: 14px;
+      opacity: 0.8;
+    }
+  }
+  .add-btn {
+    border: none;
+    padding: 10px;
+    width: 100%;
+    display: block;
+    text-align: center;
+    border-radius: 4px;
+    background-color: #4dd599;
+    font-size: 14px;
+    color: #fff;
+    &:disabled {
+      background-color: #eae6e6;
+    }
+  }
+  .close-btn {
+    cursor: pointer;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: transparent;
+    border: none;
+  }
+}
