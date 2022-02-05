@@ -5,6 +5,8 @@ import { useEffect, useState } from 'react';
 import addSvg from '../../../assets/images/add.svg';
 import closeSvg from '../../../assets/images/close.svg';
 
+const BASE_URL = 'https://react-todooo.herokuapp.com'
+
 const AddList = (props) => {
   const [inputValue, setInputValue] = useState('');
   const [selectedColor, setSelectedColor] = useState({hex: '#C9D1D3', id: 1, name: 'grey'});
@@ -13,7 +15,7 @@ const AddList = (props) => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:3000/colors')
+      .get(`${BASE_URL}:3001/colors`)
       .then(({data}) => {
         setColors(data)
       })
